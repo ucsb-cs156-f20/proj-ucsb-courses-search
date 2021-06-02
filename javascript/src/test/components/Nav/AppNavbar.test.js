@@ -24,5 +24,15 @@ describe("AppNavbar tests", () => {
     const brandElement = getByText(/UCSB Courses Search/);
     expect(brandElement).toBeInTheDocument();
   });
+  test("once courses search icon button is pressed, previous results should not display", () => {
+    const history = createMemoryHistory();
+    const { getByText } = render(
+      <Router history={history}>
+        <AppNavbar />
+      </Router>
+    );
+    const downloadAsCSVButton = getByText(/Download as CSV/);
+    not(downloadAsCSVButton).toBeInTheDocument();
+  }) 
   
 });

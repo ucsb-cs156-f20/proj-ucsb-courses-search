@@ -18,11 +18,15 @@ function AppNavbar() {
   const isAdmin = roleInfo && roleInfo.role.toLowerCase() === "admin";
   const isMember = roleInfo && roleInfo.role.toLowerCase() === "member";
 
+  const refreshPage = ()=>{
+    window.location.reload();
+ }
+
   return (
     <Navbar className="navbar-custom" expand="lg" bg="dark" variant="dark">
       <Navbar.Toggle />
       <Navbar.Collapse>
-      <LinkContainer to={""}>
+      <LinkContainer onClick={refreshPage} to={""}>
         <Navbar.Brand data-testid="brand">
           <p className="brand"><img className="brand" src={'/proj-ucsb-courses-search-240x240.png'}  alt="UCSB Courses Search icon"  /></p>
         </Navbar.Brand>
