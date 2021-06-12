@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import SelectQuarter from 'main/components/BasicCourseSearch/SelectQuarter';
-import { quarterRange } from 'main/utils/quarterUtilities';
+import { standardQuarterRange } from 'main/utils/quarterUtilities';
 
 const AddSchedForm = ({ createSchedule, updateSchedule, existingSchedule }) => {
 
@@ -13,7 +13,7 @@ const AddSchedForm = ({ createSchedule, updateSchedule, existingSchedule }) => {
   };
 
   const [schedule, setSchedule] = useState(existingSchedule || emptySchedule);
-  const quarters = quarterRange('20084', '20214');
+  const quarters = standardQuarterRange;
   const [quarter, setQuarter] = useState(
     existingSchedule ? existingSchedule.quarter : emptySchedule.quarter
   );

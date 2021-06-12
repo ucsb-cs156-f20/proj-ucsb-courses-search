@@ -87,6 +87,8 @@ const quarterRange = (beginYYYYQStr, endYYYYQStr) => {
     return quarterList;
 }
 
+const standardQuarterRange = quarterRange("20084", "20214");
+
 export {
     fromFormat,
     toFormat,
@@ -94,5 +96,6 @@ export {
     fromNumericYYYYQ,
     toNumericYYYYQ,
     nextQuarter,
-    quarterRange
+    quarterRange,
+    standardQuarterRange
 };
